@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Độ C" id="doC">
+    <button onclick="chuyendoi()">Tính:</button>
+    <p id="result"></p>
+    <script>
+        function chuyendoi() {
+            let doC= +document.getElementById("doC").value;
+            let doF= (doC/5)*9+32;
+            document.getElementById("result").innerHTML="Độ F là: " + doF;
+        }
+    </script>
+</body>
+</html>

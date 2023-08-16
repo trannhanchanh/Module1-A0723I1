@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Bán kính" id="r">
+    <button onclick="dientichhinhtron()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function dientichhinhtron(){
+            let r= +document.getElementById("r").value;
+            let dt= Math.PI*r*r;
+            document.getElementById("result").innerHTML="Diện tích hình tròn là:"+dt;
+
+        }
+    </script>
+</body>
+</html>

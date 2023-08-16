@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Điểm lý" id="ly"> 
+    <input type="text" placeholder="Điểm hóa" id="hoa">
+    <input type="text" placeholder="Điểm sinh" id="sinh">
+    <button onclick="tinhdiem()">Tính</button>
+    <p id="tongdiem"></p>
+    <p id="dtb"></p>
+    <script>
+        function tinhdiem() {
+            let ly= +document.getElementById("ly").value;
+            let hoa= +document.getElementById("hoa").value;
+            let sinh= +document.getElementById("sinh").value;
+            let tongdiem= ly+hoa+sinh;
+            let dtb= tongdiem/3;
+            document.getElementById("tongdiem").innerHTML="Tổng điểm là:"+tongdiem;
+            document.getElementById("dtb").innerHTML="Điểm trung bình là:"+dtb;
+
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

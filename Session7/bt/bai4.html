@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Bán kính" id="r">
+    <button onclick="chuvihinhtron()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function chuvihinhtron(){
+            let r= +document.getElementById("r").value;
+            let cv= Math.PI*2*r;
+            document.getElementById("result").innerHTML="Chu vi hình tròn là:"+cv;
+
+        }
+    </script>
+</body>
+</html>
