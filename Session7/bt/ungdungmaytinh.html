@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <input type="text" placeholder="Nhập số thư nhất" id="num1">
+    <input type="text" placeholder="Nhập số thư hai" id="num2">
+    <br>
+    <button onclick="plus()">Addition(+)</button>
+    <button onclick="sub()">Subtraction(-)</button>
+    <button onclick="mul()">Multiplication(X)</button>
+    <button onclick="divi()">Division(/)</button>
+    <p id="result"></p>
+    <script>
+        function plus() {
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let result = num1 + num2;
+            document.getElementById("result").innerHTML = "Result:" + result;
+        }
+
+        function sub() {
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let result = num1 - num2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        function mul() {
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let result = num1 * num2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        function divi() {
+            let num1 = +document.getElementById("num1").value;
+            let num2 = +document.getElementById("num2").value;
+            let result = num1 / num2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+</body>
+
+</html>
