@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diemgiuaki= parseFloat(prompt("Nhập điểm giữa kì:"));
+        let diemcuoiki=parseFloat(prompt("Nhập điểm cuối kì:"));
+        let diemtong= (diemgiuaki+diemcuoiki*3)/4;
+        if(diemtong<=10 && diemtong>=8){
+            alert("Học sinh xếp loại giỏi");
+        } else if(diemtong<=8 && diemtong>=6.5){
+            alert("Học sinh xếp loại khá");
+        } else if(diemtong<=6.5 && diemtong>=5){
+            alert("Học sinh xếp loại trung bình");
+        } else if(diemtong>=0 && diemtong<=5){
+            alert("Học sinh xếp loại yếu")
+        } else {
+            alert("Mời bạn nhập lại điểm.")
+        }
+    </script>
+</body>
+</html>
