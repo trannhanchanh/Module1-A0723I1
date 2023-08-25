@@ -7,12 +7,12 @@
 </head>
 <body>
     <script>
-        let doC= parseFloat(prompt("Nhập độ C:"));
-        let doF= doC*9/5+32;
-        if(doC<0 && doF<0){
-            alert("Mời bạn nhập lại.");
-        } else {
-            alert("Độ F  là: " + doF);
+        let m= parseFloat(prompt("Nhập độ dài:"));
+        let ft= m*3.2808;
+        if(m<=0 && ft<=0 ){
+            alert("Mời bạn nhập lại:");
+        }else {
+            alert("Độ dài feet là:"+ft);
         }
     </script>
 </body>
