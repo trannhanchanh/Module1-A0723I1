@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a= parseFloat(prompt("Nhập độ dài cạnh a:"));
+        let b= parseFloat(prompt("Nhập độ dài cạnh b:"));
+        let c= parseFloat(prompt("Nhập độ dài cạnh c:"));
+        if(a<=0 || b<=0 || c<=0 ){
+            alert("Mời bạn nhập lại.");
+        } else if(a+b>c && a+c>b && b+c>a){
+            alert("3 cạnh này tạo thành 1 tam giác");
+        } else{
+            alert("Tam giác không tồn tại.");
+        }
+    </script>
+</body>
+</html>
