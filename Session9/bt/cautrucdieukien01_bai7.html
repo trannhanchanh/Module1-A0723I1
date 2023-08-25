@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const soPhutGoi = 300; 
+        const soTinNhan = 150; 
+
+
+        const giaCuocCoBan = 20; 
+
+     
+        let giaCuoc = giaCuocCoBan; 
+
+        if (soPhutGoi > 200) {
+            const soPhutVuot = soPhutGoi - 200;
+            const phiPhutGoiVuot = soPhutVuot * 0.5; 
+            giaCuoc += phiPhutGoiVuot;
+        }
+
+        if (soTinNhan > 100) {
+            const soTinNhanVuot = soTinNhan - 100;
+            const phiTinNhanVuot = soTinNhanVuot * 0.2; 
+            giaCuoc += phiTinNhanVuot;
+        }
+
+        alert(`Số phút gọi: ${soPhutGoi}`);
+        alert(`Số tin nhắn: ${soTinNhan}`);
+        alert(`Tổng cước điện thoại: ${giaCuoc}`);
+    </script>
+
+</body>
+
+</html>
