@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sodien= parseFloat(prompt("Nhập số điện:"));
+        if(sodien<=50){
+            giadien= sodien*1500;
+            alert("Giá điện là: " + giadien);
+        } else if(sodien<=100){
+            giadien= 50*1500+(sodien-50)*2000;
+            alert("Giá điện là: " + giadien);
+        } else if(sodien<=200){
+            giadien=50*1500+50*2000+(sodien-100)*2500;
+            alert("Giá điện là: " + giadien);
+        } else {
+            giadien=50*1500+50*2000+100*2500+(sodien-200)*3000;
+            alert("Giá điện là: " + giadien);
+        }
+    </script>
+</body>
+</html>
