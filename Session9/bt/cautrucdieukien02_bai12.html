@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let soTienBanDau = parseFloat(prompt("Nhập số tiền ban đầu:"));
+        let soThangChoVay = parseInt(prompt("Nhập số tháng cho vay:"));
+        let laiXuatHangThang = parseFloat(prompt("Nhập lãi xuất hàng tháng (%):"));
+        let laiSuat = laiXuatHangThang / 100;
+        let tongTien = soTienBanDau;
+        for (let thang = 1; thang <= soThangChoVay; thang++) {
+            const laiThang = tongTien * laiSuat;
+            tongTien += laiThang;
+        }
+
+        let tongLai = tongTien - soTienBanDau;
+        let tongTienCuoiCung = tongTien;
+
+        alert(`Số tiền ban đầu: ${soTienBanDau}`);
+        alert(`Số tháng cho vay: ${soThangChoVay}`);
+        alert(`Lãi xuất hàng tháng: ${laiXuatHangThang}%`);
+        alert(`Tổng lãi sau ${soThangChoVay} tháng: ${tongLai.toFixed(2)}`);
+        alert(`Số tiền cuối cùng sau ${soThangChoVay} tháng: ${tongTienCuoiCung.toFixed(2)}`);
+
+    </script>
+</body>
+
+</html>

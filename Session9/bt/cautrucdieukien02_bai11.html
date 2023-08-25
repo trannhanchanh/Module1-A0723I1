@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let thunhap=parseFloat(prompt("Nhập số tiền thuế thu nhập:"));
+        if(thunhap<=5000){
+            thue= thunhap*0.05;
+            alert("Thuế thu nhập là: " + thue);
+        } else if(thunhap<=10000){
+            thue=5000*0.05+(thunhap-5000)*0.1;
+            alert("Thuế thu nhập là: " + thue);
+        } else if(thunhap<=20000) {
+            thue=5000*0.05+5000*0.1+(thunhap-10000)*0.15;
+            alert("Thuế thu nhập là: " + thue);
+        } else {
+            thue=5000*0.05+5000*0.1+10000*0.15+(thunhap-20000)*0.2;
+            alert("Thuế thu nhập là:"+thue);
+        }
+    </script>
+</body>
+</html>
