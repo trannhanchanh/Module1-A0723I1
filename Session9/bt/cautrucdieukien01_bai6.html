@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let doanhso= parseFloat(prompt("Nhập số tiền doanh số bán hàng:"));
+        if(doanhso<=10000 && doanhso>=0){
+            alert("Số tiền hoa hồng là:"+0.05*doanhso);
+        } else if(doanhso<=20000){
+            alert("Số tiền hoa hồng là:"+0.07*doanhso);
+        } else {
+            alert("Số tiền hoa hồng là:"+0.1*doanhso);
+        }
+    </script>
+</body>
+</html>
