@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tien=+prompt("Nhap so tien ban dau:");
+        let thang=+prompt("Nhap so thang cho vay:");
+        let lai= +prompt("Nhap lai suat theo thang");
+        for(let i=1; i<=thang; i++) {
+            let laisuat= tien*lai;
+            tien= tien+laisuat;
+        }
+        let tong= tien-tien/(1+thang);
+        document.write("Tong so tien lai sau thoi gian vay la:"+tong);
+
+    </script>
+</body>
+</html>
