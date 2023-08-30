@@ -9,22 +9,20 @@
     <script>
         let n1=0;
         let n2=1;
-         document.write(n1+"<br>");
-         document.write(n2+"<br>");
         let nextTerm;
         let count=1;
         while(count<=20){
             nextTerm= n1+n2;
             n1=n2;
             n2= nextTerm;
-           
-           document.write(nextTerm+"<br>");
-           count++;
-        }    
+            if(nextTerm%5 ==0){
+                document.write(nextTerm+"<br>");
+                break;
+            }
            
         
-       
+           count++;
+        }    
     </script>
-
 </body>
 </html>

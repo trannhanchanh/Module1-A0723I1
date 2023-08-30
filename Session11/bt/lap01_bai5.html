@@ -7,24 +7,24 @@
 </head>
 <body>
     <script>
-        let n1=0;
+         let n1=0;
         let n2=1;
          document.write(n1+"<br>");
          document.write(n2+"<br>");
         let nextTerm;
         let count=1;
+        let sum=0;
         while(count<=20){
             nextTerm= n1+n2;
             n1=n2;
             n2= nextTerm;
-           
+            sum=sum+nextTerm;
            document.write(nextTerm+"<br>");
+           
+
            count++;
         }    
-           
-        
-       
+        document.write("Tổng 20 số đầu tiên trong dãy fibonacci là:"+sum);
     </script>
-
 </body>
 </html>
