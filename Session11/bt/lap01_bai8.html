@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doanSo()">Chơi</button>
+
+    <script>
+        function doanSo() {
+            let number = +prompt("Nhap so: ");
+            let randomNumber = Math.floor(Math.random() * number) + 1;
+            console.log(randomNumber);
+            let choice = +prompt("Nhap so can doan: ");
+            let count=0;
+            while (choice!= randomNumber) {
+                count++;
+                if (count== 3) {
+                alert("Ban da ket thuc luot choi");
+                break;
+            } else if (choice < randomNumber) {
+                alert("Nho hon");
+                
+            } else {
+                alert("Lon hon");
+                
+            }
+            choice= +prompt("Nhap so can doan:");
+            }
+            if(count==3){
+                alert("Ban da ket thuc luot choi");
+            }else{
+                alert("Chuc mung ban");
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
