@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n= +prompt("Nhap so luong hien thi trong day fibonacci");
+         let n1=0;
+        let n2=1;
+         document.write(n1+"<br>");
+         document.write(n2+"<br>");
+        let nextTerm;
+        let count=1;
+        while(count<=n){
+            nextTerm= n1+n2;
+            n1=n2;
+            n2= nextTerm;
+           
+           document.write(nextTerm+"<br>");
+           count++;
+        }    
+           
+    </script>
+</body>
+</html>
