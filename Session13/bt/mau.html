@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Check V</h1>
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById("result");
+        function check() {
+            const v = parseInt(prompt("Nhập số nguyên V:"));
+            let numbers = new Array(10);
+            for (let i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+                if (numbers[i] === v) {
+                    result.innerHTML = `V(${v}) is in array `;
+                    break;
+                } else {
+                    result.innerHTML = `V(${v}) is not in array `;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
