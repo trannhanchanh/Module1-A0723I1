@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number=[];
+        let count=0;
+        let n= +prompt("Nhap so phan tu:");
+        for(let i=0; i<n; i++) {
+            number[i]=+prompt("Nhap so phan tu thu"+(i+1));
+        }
+        for(let i=0; i<number.length; i++) {
+            if(number[i]<0){
+                document.write(number[i]+"<br/>");
+                count++;
+            }
+        }
+        document.write("Có"+count+"phần tử nguyên âm");
+
+        
+    </script>
+</body>
+</html>

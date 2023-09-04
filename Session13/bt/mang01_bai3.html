@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number=[];
+        let n= +prompt("Nhap so phan tu:");
+        for(let i=0; i<n; i++) {
+            number[i]=+prompt("Nhap so phan tu thu"+(i+1));
+        }
+        let max= number[0];
+        let index=0;
+        let sum=0;
+        for(let i=0; i<number.length; i++) {
+            if(number[i]>max){
+                max=number[i];
+                index=i;
+            }
+            sum= sum + number[i];
+        }
+        document.write("Giá trị lớn nhất của mảng là:"+max+"tại vị trí:"+index+"<br/>");
+        document.write("Giá trị trung bình của mảng là:"+sum/n);
+    </script>
+</body>
+</html>
