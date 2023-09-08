@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function footToMeter() {
+             let meter= 0.305*foot;
+            return meter;
+        }
+        
+        function meterToFoot() {
+             let foot= 3.279*meter;
+            return foot;
+        }
+        let foot= parseFloat(prompt("Nhap do dai feet:"));
+        alert(foot+"foot tương ứng là:" + footToMeter() + "meter tương ứng.");
+        let meter= parseFloat(prompt("Nhap do dai meters:"));
+        alert(meter+"meter tương ứng là:" + meterToFoot() + "foot tương ứng.");
+    </script>
+</body>
+</html>
