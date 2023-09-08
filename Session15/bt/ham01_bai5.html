@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ngoisao= ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let chomsao= ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function check(star) {
+            let index_ngoisao=0;
+            let result="";
+            for(let i=0; i<ngoisao.length; i++) {
+                if(star== ngoisao[i]) {
+                   index_ngoisao=i;
+                   for(let j=0; j<chomsao.length; j++) {
+                    if(index_ngoisao==j) {
+                        result= chomsao[j];
+                        return result;
+                    } else{
+                        result= "Không tìm thấy chòm sao nào.";
+                        return result;
+                    }
+                   }
+                } else {
+                   result="Không tim thấy ngôi sao nào";
+                   return result;
+                }
+            }
+        }
+        let star= prompt("Nhap ngoi sao:");
+        alert(check(star));
+    </script>
+</body>
+</html>
