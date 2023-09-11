@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = ["c", "h", "a", "n", "h", "h", "u", "n", "g"];
+        let kitu = prompt("Nhap ki tu bat ki:");
+        function check(str, kitu) {
+            let count = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] == kitu) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        if (check(str, kitu) == 0) {
+            alert("Khong tim thay ki tu trong mang.");
+        } else {
+            let result = check(str, kitu);
+            alert("Số lần kí tự xuất hiện là : " + result);
+        }
+    </script>
+
+</body>
+
+</html>

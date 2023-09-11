@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let char= prompt("Nhap ki tu:");
+        function check(char) {
+            return !isNaN(parseFloat(char))&& isFinite(char);
+        }
+        if(check(char)){
+            alert("'"+char+"' là ký tự số.");
+        } else {
+            alert("'"+char+"' không là ký tự số.");
+        }
+    </script>
+</body>
+</html>

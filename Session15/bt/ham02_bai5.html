@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check() {
+            let a= parseInt(prompt("Nhap so thu nhat"));
+            let b= parseInt(prompt("Nhap so thu hai"));
+            let c= parseInt(prompt("Nhap so thu ba "));
+            if(a<b && a<c) {
+                return a;
+            } else if(b<a && b<c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+        let result= check();
+        alert("Số nguyên có giá trị nhỏ nhất là: "+result);
+    </script>
+</body>
+</html>

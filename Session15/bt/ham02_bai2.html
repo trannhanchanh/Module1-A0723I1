@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r= +prompt("Nhap ban kinh: ");
+        function chuvihinhtron() {
+            result= 2*Math.PI*r;
+            return result;
+        }
+        let chuvi= chuvihinhtron();
+        function dientichhinhtron() {
+            result= Math.PI*r*r;
+            return result;
+        }
+        let dientich= dientichhinhtron();
+        alert("Chu vi hình tròn là:"+chuvi);
+        alert("Diện tích hình tròn là:"+dientich);
+    </script>
+</body>
+</html>
