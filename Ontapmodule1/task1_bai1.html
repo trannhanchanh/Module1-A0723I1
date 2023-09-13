@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tienluong= +prompt("Nhap so tien:");
+        if(tienluong==15000000) {
+            alert("Thue thu nhap là:"+0.2*tienluong);
+        } else if(tienluong<15000000 && tienluong>=7000000){
+            alert("Thue thu nhap là:"+0.1*tienluong);
+        }else if(tienluong<7000000 && tienluong>=0) {
+            alert("Thue thu nhap là:"+0.05*tienluong);
+        }else {
+            alert("Moi ban nhap lai.");
+        }
+    </script>
+</body>
+</html>

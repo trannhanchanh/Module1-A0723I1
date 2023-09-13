@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s= prompt("Nhap chuoi:");
+        s= s.split("");
+        function isPalindrome(s) {
+            check= true;
+            let first= 0;
+            let last= s.length-1;
+            while(first<last) {
+                if(s[first]!= s[last]) {
+                    check=false;
+                    
+            } 
+            first++;
+                    last--;
+           
+        }
+        if(check){
+            alert(s+" is palindrome");
+        }else {
+            alert(s+" is not palindrome");
+        }
+    }
+    isPalindrome(s);
+    </script>
+</body>
+</html>
