@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[];
+        let n= +prompt("Nhap so phan tu cua a:");
+
+        for(let i=0; i<n; i++) {
+            a[i]= +prompt("Nhap phan tu thu"+(i+1));
+        }
+        
+        alert(a);
+        let b=[];
+        let m= +prompt("Nhap so phan tu cua b:");
+        for(let i=0; i<m; i++) {
+            b[i]= +prompt("Nhap phan tu thu"+(i+1));
+        }
+        
+        alert(b);
+        let setA= new Set(a);
+        let result= b.filter(element => !setA.has(element));
+        result.sort((a,b) =>a-b);
+        alert(result);
+    </script>
+</body>
+</html>
