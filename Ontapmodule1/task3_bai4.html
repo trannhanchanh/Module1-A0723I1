@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let choice;
+       let total=0;
+       do{
+        choice= parseInt(prompt("Chon do uong trong menu(nhap tu 1 den 7):"+
+        "1.Cafe -     12000VNĐ/1ly"+
+        "2.Cam vắt-   15000VNĐ/1ly"+
+        "3.Nước ép cà rốt- 20000VNĐ/1ly"+
+        "4.Nước ép cà chua-20000VNĐ/1ly"+
+        "5.Nước lọc- 5000VNĐ/1chai"+
+        "6.Nước dừa- 30000VNĐ/1ly"+
+        "7.Thoát gọi món"));
+        switch(choice) {
+            case 1:
+                var soluong= +prompt("Vui long nhap so luong chon ly ca phê:");
+                total+= soluong*12000;
+                break;
+            case 2:
+                var soluong= +prompt("Vui long nhap so luong chon ly cam vat: ");
+                total+= soluong*15000;
+                break;
+            case 3:
+                var soluong=+prompt("Vui long nhap so luong chon ly nuoc ep ca rot:");
+                total+= soluong*20000;
+                break;
+            case 4:
+                var soluong= +prompt("Vui long nhap so luong chon ly nuoc ep ca chua:");
+                total+= soluong*20000;
+                break;
+            case 5:
+                var soluong=+prompt("Vui long nhap so luong chon chai nuoc:");
+                total+= soluong*5000;
+                break;
+            case 6:
+                var soluong= +prompt("Vui long nhap so luong chon nuoc dua:");
+                total+= soluong*30000;
+                break;
+            case 7:
+                alert("Cam on ban su dung dich vu");
+                break;
+            default:
+                alert("Vui long nhap tu 1 den 7.");
+        }
+    } while(choice!=7);
+
+       
+                alert("Tổng số tiền bạn cần phải trả là:"+total);
+        
+
+
+
+    </script>
+</body>
+</html>

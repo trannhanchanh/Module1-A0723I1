@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numerators=[];
+        let n= +prompt("Nhap so phan tu:");
+        for(let i=0; i<n; i++) {
+            numerators[i]= +prompt("Nhap so phan tu thu"+(i+1));
+        }
+        alert(numerators);
+        let denominators=[];
+        for(let i=0; i<n; i++) {
+            denominators[i]= +prompt("Nhap so phan tu thu"+(i+1));
+        }
+        alert(denominators);
+        let max= numerators[0]/denominators[0];
+        let index=0;
+        for(let i=1; i<n; i++) {
+            if(numerators[i]/denominators[i] >max) {
+                max=numerators[i]/denominators[i];
+                index=i;
+            }
+        }
+        alert("Giá trị lớn nhất của maxFraction là:"+max +"tại vị trí"+index);
+
+    </script>
+</body>
+</html>
