@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="demo" width="500" height="600"></canvas>
+    <script>
+         class Rectangle{
+            constructor(length, width) {
+                this.width = width;
+                this.length = length;
+            }
+            getWidth(){
+                return this.width;
+
+            }
+            getLength(){
+                return this.length;
+            }
+            setWidth(width){
+                this.width = width;
+            }
+            setLength(length){
+                this.length = length;
+            }
+            getArea() {
+                return this.length*this.width;
+            }
+            getPerimeter() {
+                return 2*(this.length+this.width);
+            }
+
+         }
+         let myRectangle= new Rectangle(200,100);
+         let width= myRectangle.getWidth();
+         let length= myRectangle.getLength();
+         let area= myRectangle.getArea();
+         let perimeter= myRectangle.getPerimeter();
+         myRectangle.setWidth(200);
+         myRectangle.getWidth();
+         myRectangle.setLength(400);
+         myRectangle.getLength();
+         alert("Area:"+area+"và perimeter:"+perimeter);
+         
+
+        let canvas=document.getElementById("demo");
+        let ctx= canvas.getContext('2d');
+        ctx.fillStyle="red";
+        ctx.fillRect(10,10,length, width);
+
+
+
+    </script>
+</body>
+</html>

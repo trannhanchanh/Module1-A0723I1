@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Định nghĩa giá của các thức uống
+const menu = {
+  1: { name: "Cafe", price: 3.5 },
+  2: { name: "Cam vắt", price: 2.0 },
+  3: { name: "Nước ép cà rốt", price: 2.5 },
+  4: { name: "Nước ép cà chua", price: 2.5 },
+  5: { name: "Nước lọc", price: 1.0 },
+  6: { name: "Nước dừa", price: 2.0 },
+};
+
+// Hàm in ra danh sách thức uống
+function printMenu() {
+  console.log("Danh sách thức uống:");
+  for (const key in menu) {
+    if (menu.hasOwnProperty(key)) {
+      const drink = menu[key];
+      console.log(`${key}: ${drink.name} - ${drink.price} đồng`);
+    }
+  }
+  console.log("7: Thoát gọi món");
+}
+
+// Hàm tính tổng tiền
+function calculateTotal(order) {
+  let total = 0;
+  for (const key in order) {
+    if (order.hasOwnProperty(key)) {
+      const quantity = order[key];
+      const drink = menu[key];
+      total += quantity * drink.price;
+    }
+  }
+  return total;
+}
+
+// Khởi tạo đơn hàng
+const order = {};
+
+// Sử dụng vòng lặp do while cho người dùng đặt thức uống
+let choice;
+do {
+  printMenu();
+  choice = parseInt(prompt("Chọn thức uống (1-7):"));
+  if (menu.hasOwnProperty(choice)) {
+    const quantity = parseInt(prompt(`Nhập số lượng ${menu[choice].name}:`));
+    if (quantity > 0) {
+      order[choice] = quantity;
+      console.log(`Đã thêm ${quantity} ${menu[choice].name} vào đơn hàng.`);
+    } else {
+      console.log("Số lượng không hợp lệ. Vui lòng thử lại.");
+    }
+  } else if (choice !== 7) {
+    console.log("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+  }
+} while (choice !== 7);
+
+// Tính và hiển thị tổng số tiền
+const totalAmount = calculateTotal(order);
+console.log(`Tổng số tiền cần phải trả: ${totalAmount} đồng.`);
+
+    </script>
+</body>
+</html>
