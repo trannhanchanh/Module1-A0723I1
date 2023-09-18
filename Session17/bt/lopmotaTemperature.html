@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                this.celsius =celsius;
+            }
+            fahrenheit () {
+                return 9/5*this.celsius+32;
+            }
+            Kenvin() {
+                return this.celsius+273.15;
+            }
+        }
+        let temperature = new Temperature(25);
+        let doF= temperature.fahrenheit();
+        let doK= temperature.Kenvin();
+        alert("Độ F là: " + doF+"và độ K là: " + doK);
+    </script>
+</body>
+</html>
