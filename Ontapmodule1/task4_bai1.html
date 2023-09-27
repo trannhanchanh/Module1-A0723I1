@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str= prompt("Nhap chuoi:");
+        function trim(str) {
+            return str.trim();
+        }
+        function chuanHoa(string) {
+            string= trim(string);
+            string= string.replace(/\s+/g,'');
+            let sentence= string.toLowerCase().split(' ');
+            for(let i=0; i<sentence.length; i++){
+                sentence[i]= sentence[i][0].toUpperCase()+sentence[i].slice(1);
+            }
+            return sentence.join("");
+        }
+        let sentence= chuanHoa(str);
+        document.write("Biến đổi xâu là:"+sentence);
+        function demtu(sentence) {
+            let words= sentence.split(" ");
+            let maxWord= words[0];
+            for(let i=1; i<words.length; i++) {
+                if(words[i].length>maxWord.length) {
+                    maxWord= words[i];
+                }
+            }
+            return maxWord;
+        }
+        let longestWord= demtu(sentence);
+        document.write("<br/>"+"Từ có độ dài nhất trong xâu là:"+longestWord);
+    </script>
+</body>
+</html>
