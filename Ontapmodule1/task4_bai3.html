@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s1= prompt("Nhập xâu kí tự thứ nhất:");
+        let s2= prompt("Nhập xâu kí tự thứ hai:");
+        function findCommonCharacters(s1,s2) {
+            const s1Array= s1.split('');
+            const s2Array= s2.split('');
+            const commonCharacterSet= new Set();
+            for(const char of s1Array) {
+                if(s2Array.includes(char)) {
+                    commonCharacterSet.add(char);
+                }
+            }
+            const commonCharactersArray= Array.from(commonCharacterSet);
+            const commonCharactersString= commonCharactersArray.join('');
+            return commonCharactersString;
+        }
+        const commonCharacters= findCommonCharacters(s1,s2);
+        document.write(commonCharacters);
+    </script>
+</body>
+</html>
