@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let m= +prompt("Nhập số hàng:");
-        let n= +prompt("Nhập số cột:");
-        let a=[];
-        for(let i=0;i<m; i++) {
-            a[i]=[];
-            for(let j=0;j<n;j++) {
-                a[i][j]= +prompt("Nhập phần tử thứ :"+i+1 +"," +j+1);
-            }
+      let m = +prompt("Nhập số hàng:");
+      let n = +prompt("Nhập số cột:");
+      let a = [];
+      let count = 0;
+      for (let i = 0; i < m; i++) {
+        a[i] = [];
+        for (let j = 0; j < n; j++) {
+          a[i][j] = +prompt("Nhập phần tử thứ:" + (i + 1) + "," + (j + 1));
         }
+      }
+      function checkPrime(number) {
+        if (number <= 1) {
+          return false;
+        } else if (number === 2 || number === 3) {
+          return true;
+        } else {
+          for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+              return false;
+            }
+          }
+          return true;
+        }
+      }
+      console.log(a);
+      for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++) {
+          if (checkPrime(a[i][j])) {
+            console.log("Số nguyên tố là:" + a[i][j]);
+            count++;
+          }
+        }
+      }
+      console.log(`So luong so nguyen to la: ${count}`);
     </script>
-</body>
+  </body>
 </html>
