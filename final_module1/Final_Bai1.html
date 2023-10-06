@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập số phần từ của mảng:(n<50):");
+    } while (n > 50);
+
+    let array = new Array(n);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = prompt("Nhập giá trị array[" + i + "]");
+    }
+    document.write("Mảng vừa nhập: array= " + array + "<br>");
+
+    checkMang(array)
+
+    function checkMang(arr) {
+        let flag
+
+        for (let i = 1; i < arr.length; i++) {
+            flag=true;
+            if ((arr[i] >= arr[i - 1] && arr[i] <= arr[i + 1]) || (arr[i] <=arr[i - 1] && arr[i] >= arr[i + 1])) {
+                flag = false;
+                break
+            }
+        }
+        if (flag === true) {
+            document.write("TRUE. Mảng nhập vào là mảng dạng sóng.");
+        } else {
+            document.write("FALSE. Mảng nhập vào KHÔNG phải mảng dạng sóng.");
+        }
+
+    }
+</script>
+
+</body>
+</html>

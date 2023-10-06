@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function amendTheSentence(s) {
+    // Khởi tạo một mảng rỗng để lưu các từ đã tách.
+    const words = [];
+
+    // Duyệt qua chuỗi s.
+    for (let i = 0; i < s.length; i++) {
+        // Nếu gặp ký tự in hoa, thêm khoảng trắng (nếu words không rỗng) và chuyển đổi ký tự in hoa thành in thường.
+        if (s[i] === s[i].toUpperCase()) {
+            if (words.length > 0) {
+                words.push(' ');
+            }
+            words.push(s[i].toLowerCase());
+        } else {
+            // Nếu không phải ký tự in hoa, thêm vào từ hiện tại.
+            words[words.length - 1] += s[i];
+        }
+    }
+
+    // Kết hợp các từ đã tách thành chuỗi kết quả.
+    const result = words.join('');
+
+    return result;
+}
+
+// Ví dụ:
+const s1 = "CodegymDaNang";
+console.log(amendTheSentence(s1)); // Kết quả: "codegym da nang"
+
+const s2 = "Hello";
+console.log(amendTheSentence(s2)); // Kết quả: "hello"
+
+    </script>
+</body>
+</html>

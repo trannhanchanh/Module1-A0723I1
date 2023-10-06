@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = +prompt("Mời bạn nhập số phần tử:");
+      if (n % 2 !== 0) {
+        alert("Số phần tử không chẵn. Xin vui lòng nhập lại.");
+      }
+      let a = [];
+      for (let i = 0; i < n; i++) {
+        a[i] = +prompt("Nhập số phần tử thứ" + (i + 1));
+      }
+      function check(a) {
+        for (let i = 0; i < a.length - 1; i = i + 2) {
+          if (a[i] >= a[i + 1]) {
+            return "NO";
+          }
+        }
+        return "OK";
+      }
+      let result = check(a);
+      alert(result);
+    </script>
+  </body>
+</html>

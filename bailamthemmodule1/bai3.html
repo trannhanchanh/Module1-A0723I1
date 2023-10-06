@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = +prompt("Mời bạn nhập số phần tử:");
+      let a = [];
+      for (let i = 0; i < n; i++) {
+        a[i] = +prompt("Nhập số phần tử thứ" + (i + 1));
+      }
+      alert(a);
+      function check(a) {
+        let increasing = true;
+        let decreasing = true;
+        for (let i = 1; i < a.length; i++) {
+          if (a[i - 1] > a[i]) {
+            increasing = false;
+          } else if (a[i - 1] < a[i]) {
+            decreasing = false;
+          }
+        }
+        if (increasing) {
+          alert("OK");
+        } else if (decreasing) {
+          alert("OK");
+        } else {
+          alert("NO");
+        }
+      }
+      let result = check(a);
+      alert(result);
+    </script>
+  </body>
+</html>

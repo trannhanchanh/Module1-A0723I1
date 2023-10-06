@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let month=+prompt("xin mời nhập tháng vào đây")
+    let year=+prompt("xin mời nhập năm vào đây")
+    switch (month) {
+        case 1:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12: {
+            document.write(month + "/" + year + " " + "có 31 ngày")
+            break
+        }
+        case 3:
+        case 4:
+        case 6:
+        case 9:
+        case 11:{
+            document.write(month+"/"+year+" "+"có 30 ngày")
+            break}
+        case 2: {
+            if (year%4===0||year%100===0||year%400===0){
+                document.write(month+"/"+year+" "+"có 29 ngày")
+            }else {
+                document.write(month+"/"+year+" "+"có 28 ngày")
+            }
+        }
+            break;
+        default: {
+            alert("nhập lại");
+        }
+    }
+</script>
+</html>

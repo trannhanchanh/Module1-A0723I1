@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Hàm kiểm tra xem một số có phải là số chính phương hay không
+      function laSoChinhPhuong(n) {
+        var canBacHai = Math.sqrt(n);
+        return canBacHai === Math.floor(canBacHai);
+      }
+
+      // Hàm nhập mảng từ bàn phím
+      function nhapMangTuBanPhim() {
+        var n = parseInt(prompt("Nhập độ dài của mảng:"));
+        var mang = [];
+
+        for (var i = 0; i < n; i++) {
+          var phanTu = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+          mang.push(phanTu);
+        }
+
+        return mang;
+      }
+
+      // Hàm hiển thị mảng
+      function hienThiMang(mang) {
+        console.log("Mảng sau khi thêm các phần tử:");
+        console.log(mang);
+      }
+
+      // Hàm hiển thị các số chính phương trong mảng
+      function hienThiSoChinhPhuongTrongMang(mang) {
+        console.log("Các số chính phương trong mảng:");
+
+        for (var i = 0; i < mang.length; i++) {
+          if (laSoChinhPhuong(mang[i])) {
+            console.log(mang[i]);
+          }
+        }
+      }
+
+      // Nhập mảng từ bàn phím
+      var mangNhap = nhapMangTuBanPhim();
+
+      // Hiển thị mảng
+      hienThiMang(mangNhap);
+
+      // Hiển thị các số chính phương trong mảng
+      hienThiSoChinhPhuongTrongMang(mangNhap);
+    </script>
+  </body>
+</html>

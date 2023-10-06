@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findChar(inputString) {
+  const charCount = {}; // Đếm số lần xuất hiện của từng ký tự trong chuỗi
+
+  // Lặp qua chuỗi để đếm số lần xuất hiện của từng ký tự
+  for (let char of inputString) {
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  // Tạo mảng chứa các ký tự xuất hiện nhiều hơn 1 lần
+  const result = [];
+  for (let char in charCount) {
+    if (charCount[char] > 1) {
+      result.push(char);
+    }
+  }
+
+  return result;
+}
+
+// Ví dụ sử dụng:
+console.log(findChar("abcbdcef")); // Kết quả: ["b", "c"]
+console.log(findChar("abdcef"));   // Kết quả: []
+
+    </script>
+</body>
+</html>

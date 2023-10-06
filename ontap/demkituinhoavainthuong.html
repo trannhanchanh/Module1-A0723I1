@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function demKyTuInHoaVaInThuong(chuoi) {
+        let soLuongInHoa = 0;
+        let soLuongInThuong = 0;
+
+        for (let i = 0; i < chuoi.length; i++) {
+          const kyTu = chuoi[i];
+          if (kyTu >= "A" && kyTu <= "Z") {
+            soLuongInHoa++;
+          } else if (kyTu >= "a" && kyTu <= "z") {
+            soLuongInThuong++;
+          }
+        }
+
+        return {
+          inHoa: soLuongInHoa,
+          inThuong: soLuongInThuong,
+        };
+      }
+
+      const chuoiNhapVao = prompt("Nhập vào một chuỗi: ");
+      const ketQua = demKyTuInHoaVaInThuong(chuoiNhapVao);
+
+      console.log(`Số ký tự in hoa: ${ketQua.inHoa}`);
+      console.log(`Số ký tự in thường: ${ketQua.inThuong}`);
+    </script>
+  </body>
+</html>

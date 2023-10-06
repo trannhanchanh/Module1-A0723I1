@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="themTraiCay()">Thêm mới trái cây</button>
+    <button onclick="xoaTraiCay()">Xóa thông tin trái cây</button>
+
+    <div id="tableTraiCay">
+      <table border="1" style="border-collapse: collapse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tên trái cây</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+            <th>Xuất xứ</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <script>
+      class TraiCay {
+        constructor(tenTraiCay, soLuong, giaTien, xuatXu) {
+          this._tenTraiCay = tenTraiCay;
+          this._soLuong = soLuong;
+          this._giaTien = giaTien;
+          this._xuatXu = xuatXu;
+        }
+
+        get tenTraiCay() {
+          return this._tenTraiCay;
+        }
+
+        set tenTraiCay(value) {
+          this._tenTraiCay = value;
+        }
+
+        get soLuong() {
+          return this._soLuong;
+        }
+
+        set soLuong(value) {
+          this._soLuong = value;
+        }
+
+        get giaTien() {
+          return this._giaTien;
+        }
+
+        set giaTien(value) {
+          this._giaTien = value;
+        }
+
+        get xuatXu() {
+          return this._xuatXu;
+        }
+
+        set xuatXu(value) {
+          this._xuatXu = value;
+        }
+      }
+
+      let danhSachTraiCay = [];
+      function themTraiCay() {
+        let tenTraiCay = prompt("Nhập tên trái cây: ");
+        let soLuong = prompt("Nhập số lượng: ");
+        let giaTien = prompt("Nhập giá tiền: ");
+        let xuatXu = prompt("Nhập xuất xứ: ");
+
+        for (let i = 0; i < danhSachTraiCay.length; i++) {
+          if (
+            tenTraiCay == "" ||
+            soLuong == "" ||
+            giaTien == "" ||
+            xuatXu == ""
+          ) {
+            alert("Vui lòng nhập đầy đủ thông tin.");
+            hienThiDanhSachTraiCay();
+          }
+          if (tenTraiCay == danhSachTraiCay[i]._tenTraiCay) {
+            alert("Tên trái cây đã tồn tại. Vui lòng nhập lại tên trái cây.");
+            hienThiDanhSachTraiCay();
+          }
+        }
+
+        let newTraiCay = new TraiCay(tenTraiCay, soLuong, giaTien, xuatXu);
+        // Tạo đối tượng
+        danhSachTraiCay.push(newTraiCay);
+        hienThiDanhSachTraiCay(danhSachTraiCay);
+      }
+
+      function hienThiDanhSachTraiCay(danhSachTraiCay) {
+        let str = "<table border='1' style='border-collapse: collapse'>";
+        str +=
+          "<tr>" +
+          "<th>#</th>" +
+          "<th>Tên trái cây </th>" +
+          "<th>Số lượng </th>" +
+          "<th>Giá tiền </th>" +
+          "<th>Xuất xứ </th>" +
+          "</tr>";
+
+        for (let i = 0; i < danhSachTraiCay.length; i++) {
+          str +=
+            "<tr>" +
+            "<td>" +
+            (i + 1) +
+            "</td>" +
+            "<td>" +
+            danhSachTraiCay[i]._tenTraiCay +
+            "</td>" +
+            "<td>" +
+            danhSachTraiCay[i]._soLuong +
+            "</td>" +
+            "<td>" +
+            danhSachTraiCay[i]._giaTien +
+            "</td>" +
+            "<td>" +
+            danhSachTraiCay[i]._xuatXu +
+            "</td>" +
+            "<td>";
+        }
+        str += "</table>";
+        document.getElementById("tableTraiCay").innerHTML = str;
+      }
+      function xoaTraiCay() {
+        let flag;
+        let index;
+        let delName = prompt("Nhập tên trái cây cần xóa: ");
+        for (let i = 0; i < danhSachTraiCay.length; i++) {
+          if (danhSachTraiCay[i]._tenTraiCay === delName) {
+            flag = true;
+            index = i;
+            break;
+          } else {
+            flag = false;
+          }
+        }
+        if (flag === true) {
+          let choice = confirm("Bạn chắc chắn muốn xóa?");
+          if (choice === true) {
+            danhSachTraiCay.splice(index, 1);
+            hienThiDanhSachTraiCay(danhSachTraiCay);
+          } else hienThiDanhSachTraiCay(danhSachTraiCay);
+        } else document.write("Không tìm thấy tên trái cây trong danh sách");
+      }
+    </script>
+  </body>
+</html>

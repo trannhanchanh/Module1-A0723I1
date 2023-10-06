@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Nhập chuỗi:");
+      function checkString(str) {
+        let vowels = [];
+        let lowerStr = str.toLowerCase();
+        for (let i = 0; i < lowerStr.length; i++) {
+          let char = lowerStr.charAt(i);
+          if (
+            char === "a" ||
+            char === "o" ||
+            char === "u" ||
+            char === "i" ||
+            char === "e"
+          ) {
+            vowels.push(str.charAt(i));
+          }
+        }
+        return vowels;
+      }
+      let result = checkString(str);
+      alert(result);
+    </script>
+  </body>
+</html>

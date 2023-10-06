@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2_Kiểm tra năm nhuận</title>
+</head>
+<body>
+<script>
+    let time = prompt("Nhập ngày tháng năm cần check: ");
+
+    checkFormat(time);
+
+
+    function checkFormat(time) {
+        let flag=true;
+        let date = time.split("/")
+        let day = date[0];
+        let month = date[1]
+        let year = date[2];
+        if ((day>31) || (month>12) || (year<1000||year>9999)) {
+            flag = false;
+        }
+        if (flag === false) {
+            alert("Vui lòng nhập đúng định dạng: dd/mm/yyyy");
+        }
+        else {
+            checkNamNhuan(time)
+        }
+    }
+
+    function checkNamNhuan(time) {
+        document.write(time + "<br>")
+        let date = time.split("/")
+        let day = date[0];
+        let month = date[1]
+        let year = date[2];
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    document.write(+year + " là năm nhuận");
+                } else document.write(+year + " KHÔNG phải là năm nhuận");
+            } else document.write(+year + " là năm nhuận");
+        } else document.write(+year + " KHÔNG phải là năm nhuận");
+    }
+</script>
+
+</body>
+</html>

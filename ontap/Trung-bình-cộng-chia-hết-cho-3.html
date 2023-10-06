@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=YkEeguPhKgZMx-6Tt8LML7joI5EiY34Z4vL3G8U1mvTOeZX9LsrUmpNYeDJKKf9WSQogPpTESzVtoWPP_yKjNm5kMYsROCkTXb_Uz6JhdB_RZVbd_qhTGqJ9eSQH8xk5MUuw8tsvcDPYfokplnl4Ct7zsopj6mWWD1Pwu1gSzNaS9xFS6oZAYfhB35byXjkdC7D7fmJBFG2ap13r3iqA6RWycPQqSWDo3l8penHjsQuY9q0Ike4rSqKbPJL4GuwxEqSVc1X639WEgP1IA_EOQ3W9BHssTPIQpvwV7QRjy9ynVlTFNITA29ik7ZMNEpf2UlRRL-zumRw0ZzI_BKhBVVZwwwfVWKQbt2797X84Z5A" charset="UTF-8"></script></head>
+<body>
+
+</body>
+<script>
+    let doDai = +prompt("nhập độ dài mảng");
+    if (doDai>50){
+        alert("vượt quá số lượng phần tử cho phép");
+    }else {
+        let arr =[];
+        for (let i=0; i<doDai ;i++ ){
+            arr[i]= +prompt("nhập phần tử thứ " +  i);
+        }
+        document.write("phần tử trong mảng: " +arr+"<br>");
+        let arr1= [];
+        for (i =0 ; i<arr.length; i++){
+            if (arr[i] %3===0){
+                arr1.push(arr[i]);
+            }
+        }
+        let sum =0;
+        for (let i=0; i<arr1.length; i++){
+            sum +=arr1[i];
+        }
+        let tbc = sum /arr1.length;
+        document.write("trung bình cộng là các phần tử chia hết cho 3 là: "+ tbc);
+    }
+
+</script>
+</html>

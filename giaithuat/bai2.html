@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getDaysInMonth(month, year) {
+        switch (month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            return 31;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            return 30;
+          case 2:
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+              return 29;
+            } else {
+              return 28;
+            }
+        }
+      }
+      let month = parseInt(prompt("Nhập tháng:"));
+      let year = parseInt(prompt("Nhập năm:"));
+      if (month >= 1 && month <= 12 && year >= 0) {
+        const daysInMonth = getDaysInMonth(month, year);
+        alert("Tháng:" + month + "năm" + year + "có" + daysInMonth + "ngày.");
+      } else {
+        alert("Nhập tháng năm không hợp lệ.");
+      }
+    </script>
+  </body>
+</html>

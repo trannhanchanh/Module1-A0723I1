@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let n;
+      do {
+        n = +prompt("Mời bạn nhập số phần tử:");
+      } while (isNaN(n) || n <= 0);
+      let a = new Array(n);
+      for (let i = 0; i < a.length; i++) {
+        a[i] = +prompt("Nhập số phần tử thứ:" + (i + 1));
+      }
+      alert(a);
+      let b = [];
+      let count1 = 0;
+      let c = [];
+      let count2 = 0;
+      for (let i = 0; i < n; i++) {
+        if (a[i] % 2 == 0) {
+          b.push(a[i]);
+          count1++;
+        }
+      }
+      alert(b);
+      for (let i = 0; i < n; i++) {
+        if (a[i] % 2 != 0) {
+          c.push(a[i]);
+          count2++;
+        }
+      }
+      alert(c);
+      if (count1 == count2) {
+        alert("OK");
+      } else {
+        alert("NO");
+      }
+    </script>
+  </body>
+</html>

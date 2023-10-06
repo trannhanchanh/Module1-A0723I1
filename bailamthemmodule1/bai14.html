@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkString(str) {
+  var upperCaseCount = 0;
+  var lowerCaseCount = 0;
+
+  // Lặp qua từng ký tự trong chuỗi
+  for (var i = 0; i < str.length; i++) {
+    var char = str.charAt(i);
+
+    // Kiểm tra nếu ký tự là in hoa
+    if (char >= 'A' && char <= 'Z') {
+      upperCaseCount++;
+    }
+    // Kiểm tra nếu ký tự là in thường
+    else if (char >= 'a' && char <= 'z') {
+      lowerCaseCount++;
+    }
+  }
+
+  // So sánh số ký tự in hoa và in thường và trả về kết quả
+  return upperCaseCount === lowerCaseCount;
+}
+
+// Sử dụng hàm với chuỗi ví dụ
+var chuoi = "AbCdEfG";
+var ketQua = checkString(chuoi);
+console.log("Kết quả kiểm tra: " + ketQua); // Kết quả kiểm tra: true
+					
+										
+
+    </script>
+</body>
+</html>

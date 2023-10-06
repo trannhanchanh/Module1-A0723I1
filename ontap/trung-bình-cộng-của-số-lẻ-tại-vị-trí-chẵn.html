@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr =[];
+    let n;
+    do{
+        n = parseInt(prompt("Nhập số lượng phần tử"));
+    }while(n<=0||n>50);
+    for(let i=0;i<n;i++){
+        arr.push(parseInt(prompt("Nhập phần tử thứ "+i +" của mảng")));
+    }
+    console.log("Mảng vừa nhập là : "+arr);
+    function agv(arr) {
+        let sum =0;
+        let count =0;
+        for (let i=0;i<arr.length;i++){
+            if((arr[i])%2!=0&&(arr.indexOf(arr[i]))%2==0){
+                count+=1;
+                sum +=arr[i];
+            }
+        }
+        return (sum/count);
+    }
+    let result = 0;
+    result=agv(arr);
+    alert("Trung bình cộng của số lẻ tại vị trí chẵn là "+result);
+</script>

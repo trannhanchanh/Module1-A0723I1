@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countCharacters(str) {
+  var charCount = {};
+
+  // Duyệt qua từng ký tự trong chuỗi
+  for (var i = 0; i < str.length; i++) {
+    var char = str.charAt(i);
+
+    // Kiểm tra xem ký tự đã được đếm trước đó chưa
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  return charCount;
+}
+
+// Sử dụng hàm để đếm số lần xuất hiện của các ký tự trong chuỗi
+var str = "Hello World";
+var charCounts = countCharacters(str);
+
+// In kết quả
+for (var char in charCounts) {
+  console.log("'" + char + "' xuất hiện " + charCounts[char] + " lần");
+}
+
+    </script>
+</body>
+</html>

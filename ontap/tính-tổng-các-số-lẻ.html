@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tổng các số lẻ</title>
+</head>
+<body>
+ <p id = "result"></p>
+<script>
+    function sum_odd_5000() {
+        var sum = 0;
+        for(var i=1;i<=5000;i=i+2) {
+            sum = sum + i;
+        }
+        return sum;
+    }
+    const result = sum_odd_5000();
+    document.write("Tổng các số lẻ là: " + result )
+</script>
+</body>
+</html>

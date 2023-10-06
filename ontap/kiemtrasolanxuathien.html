@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function demSoLanXuatHienChuoi(str) {
+        // Khởi tạo một đối tượng để lưu trữ số lần xuất hiện của các ký tự
+        var charCount = {};
+
+        // Lặp qua từng ký tự trong chuỗi
+        for (var i = 0; i < str.length; i++) {
+          var char = str.charAt(i);
+
+          // Nếu ký tự đã tồn tại trong đối tượng charCount, tăng giá trị lên 1
+          if (charCount[char]) {
+            charCount[char]++;
+          } else {
+            // Nếu ký tự chưa tồn tại, tạo một mục mới với giá trị 1
+            charCount[char] = 1;
+          }
+        }
+
+        // Lặp qua từng mục trong đối tượng charCount và hiển thị số lần xuất hiện
+        for (var char in charCount) {
+          console.log(char + " " + charCount[char] + " lần");
+        }
+      }
+
+      // Sử dụng hàm với chuỗi ví dụ "aabcc"
+      demSoLanXuatHienChuoi("aabcc");
+    </script>
+  </body>
+</html>

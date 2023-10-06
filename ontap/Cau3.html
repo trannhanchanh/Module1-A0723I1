@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="themXe()">Thêm mới một xe</button>
+    <button onclick="xoaXe()">Xóa thông tin xe</button>
+
+    <div id="tableXe">
+      <table border="1" style="border-collapse: collapse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Biển số xe</th>
+            <th>Tên sinh viên</th>
+            <th>CMND</th>
+            <th>Hãng xe</th>
+            <th>Phí gửi xe</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <script>
+      class Xe {
+        // tên class viết hoa
+        constructor(bienSo, tenSV, cmnd, hangXe, phi) {
+          this._bienSo = bienSo;
+          this._tenSV = tenSV;
+          this._cmnd = cmnd;
+          this._hangXe = hangXe;
+          this._phi = phi;
+        }
+
+        get bienSo() {
+          return this._bienSo;
+        }
+
+        set bienSo(value) {
+          this._bienSo = value;
+        }
+
+        get tenSV() {
+          return this._tenSV;
+        }
+
+        set tenSV(value) {
+          this._tenSV = value;
+        }
+
+        get cmnd() {
+          return this._cmnd;
+        }
+
+        set cmnd(value) {
+          this._cmnd = value;
+        }
+
+        get hangXe() {
+          return this._hangXe;
+        }
+
+        set hangXe(value) {
+          this._hangXe = value;
+        }
+
+        get phi() {
+          return this._phi;
+        }
+
+        set phi(value) {
+          this._phi = value;
+        }
+      }
+
+      let danhSachXe = [];
+      function themXe() {
+        let bienSo = prompt("Nhập biển số xe: ");
+        let tenSV = prompt("Nhập tên SV: ");
+        let cmnd = prompt("Nhập cmnd: ");
+        let hangXe = prompt("Nhập hãng xe: ");
+        let phi = prompt("Nhập phí: ");
+
+        for (let i = 0; i < danhSachXe.length; i++) {
+          if (
+            bienSo == "" ||
+            tenSV == "" ||
+            cmnd == "" ||
+            hangXe == "" ||
+            phi == ""
+          ) {
+            alert("Vui lòng nhập đầy đủ thông tin.");
+            hienThiDanhSachXe();
+          }
+          if (bienSo == danhSachXe[i]._bienSo) {
+            alert("Biển số xe đã tồn tại. Vui lòng nhập lại biển số xe.");
+            hienThiDanhSachXe();
+          }
+        }
+
+        let newXe = new Xe(bienSo, tenSV, cmnd, hangXe, phi);
+        // Tạo đối tượng
+        danhSachXe.push(newXe);
+        hienThiDanhSachXe(danhSachXe);
+      }
+
+      function hienThiDanhSachXe(danhSachXe) {
+        let str = "<table border='1' style='border-collapse: collapse'>";
+        str +=
+          "<tr>" +
+          "<th>#</th>" +
+          "<th>Biển số xe </th>" +
+          "<th>Tên sinh viên </th>" +
+          "<th>CMND </th>" +
+          "<th>Hãng xe </th>" +
+          "<th>Phí gửi xe </th>" +
+          "</tr>";
+
+        for (let i = 0; i < danhSachXe.length; i++) {
+          str +=
+            "<tr>" +
+            "<td>" +
+            (i + 1) +
+            "</td>" +
+            "<td>" +
+            danhSachXe[i]._bienSo +
+            "</td>" +
+            "<td>" +
+            danhSachXe[i]._tenSV +
+            "</td>" +
+            "<td>" +
+            danhSachXe[i]._cmnd +
+            "</td>" +
+            "<td>" +
+            danhSachXe[i]._hangXe +
+            "</td>" +
+            "<td>" +
+            danhSachXe[i]._phi +
+            "</td>" +
+            "</tr>";
+        }
+        str += "</table>";
+        document.getElementById("tableXe").innerHTML = str;
+      }
+
+      function xoaXe() {
+        let flag;
+        let index;
+        let delID = prompt("Nhập biển số xe cần xóa: ");
+        for (let i = 0; i < danhSachXe.length; i++) {
+          if (danhSachXe[i]._bienSo === delID) {
+            flag = true;
+            index = i;
+            break;
+          } else {
+            flag = false;
+          }
+        }
+        if (flag === true) {
+          let choice = confirm("Bạn chắc chắn muốn xóa?");
+          if (choice === true) {
+            danhSachXe.splice(index, 1);
+            hienThiDanhSachXe(danhSachXe);
+          } else hienThiDanhSachXe(danhSachXe);
+        } else document.write("Không tìm thấy biển số xe trong danh sách");
+      }
+    </script>
+  </body>
+</html>

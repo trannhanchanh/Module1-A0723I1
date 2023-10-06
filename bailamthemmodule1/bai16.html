@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Nhập chuỗi:");
+      function check(str) {
+        let words = str.split(" ");
+        if (words.length == 1) {
+          return str;
+        } else {
+          let viettat = "";
+          for (let i = 0; i < words.length; i++) {
+            viettat += words[i][0];
+          }
+          return viettat;
+        }
+      }
+      let kiemtra = check(str);
+      alert(kiemtra);
+    </script>
+  </body>
+</html>

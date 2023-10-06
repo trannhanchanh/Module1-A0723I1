@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dateString = prompt("Nhập chuỗi ngày tháng năm:");
+      function checkDate(dateString) {
+        var parts = dateString.split("/");
+        var day = parseInt(parts[0], 10);
+        var month = parseInt(parts[1], 10);
+        var year = parseInt(parts[2], 10);
+        if (day > 31 || month > 12) {
+          return false;
+        }
+        switch (month) {
+          case 1: // Tháng 1
+          case 3: // Tháng 3
+          case 5: // Tháng 5
+          case 7: // Tháng 7
+          case 8: // Tháng 8
+          case 10: // Tháng 10
+          case 12: // Tháng 12
+            return day >= 1 && day <= 31;
+
+          case 4: // Tháng 4
+          case 6: // Tháng 6
+          case 9: // Tháng 9
+          case 11: // Tháng 11
+            return day >= 1 && day <= 30;
+
+          case 2: // Tháng 2
+            // Kiểm tra năm nhuận
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+              return day >= 1 && day <= 29;
+            } else {
+              return day >= 1 && day <= 28;
+            }
+
+          default:
+            return false;
+        }
+      }
+      let check = checkDate(dateString);
+      alert(check);
+
+      // Kiểm tra xem ngày, tháng và năm có hợp lệ khôn
+
+      // Sử dụng hàm để kiểm tra
+    </script>
+  </body>
+</html>

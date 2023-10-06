@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("Nhập n:"));
+      if(n<=0){
+        alert("Xin vui lòng nhập lại.");
+      }
+      let sum = 0;
+      let giaithua = 1;
+      for (let i = 1; i <= n; i++) {
+        giaithua = giaithua * i;
+        if (i % 2 == 0) {
+          sum = 15 - sum + 1 / giaithua;
+        } else {
+          sum = 15 - sum - 1 / giaithua;
+        }
+      }
+      alert("Tổng của chuỗi là: " + sum);
+    </script>
+  </body>
+</html>
